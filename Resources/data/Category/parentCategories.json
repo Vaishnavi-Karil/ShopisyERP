@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Footware",
+    "parentCategory": null
+  },
+  {
+    "name": "Electronics",
+    "parentCategory": null
+  },
+  {
+    "name": "Stationary",
+    "parentCategory": null
+  },
+  {
+    "name": "Beauty Product",
+    "parentCategory": null
+  },
+  {
+    "name": "Baby Care Products",
+    "parentCategory": null
+  },
+  {
+    "name": "Car Care",
+    "parentCategory": null
+  },
+  {
+    "name": "Car Care Services",
+    "parentCategory": null
+  },
+  {
+    "name": "Furniture",
+    "parentCategory": null
+  },
+  {
+    "name": "Home Care Services",
+    "parentCategory": null
+  },
+  {
+    "name": "Delivery Services",
+    "parentCategory": null
+  }
+]

@@ -1,0 +1,103 @@
+[
+  {
+    "name": "Footware for Womens", 
+     "parentCategory": "Footware"
+  }, 
+  {
+     "name": "Footware for Mens", 
+     "parentCategory": "Footware"
+  },
+  {
+     "name": "Footware for Kids", 
+     "parentCategory": "Footware"
+  }, 
+  {
+     "name": "Electonics",
+      "parentCategory": null
+  }, 
+  {
+     "name": "Hardware", 
+     "parentCategory":null
+  }, 
+  {
+     "name": "Stationary", 
+     "parentCategory": null
+  }, 
+  { 
+     "name": "Beauty Product for Womens", 
+     "parentCategory": "Beauty Product"
+  }, 
+  {
+     "name": "Beauty Producst for Mens", 
+     "parentCategory": "Beauty Product"
+  }, 
+  {
+     "name": "Beauty Product for Kids", 
+     "parentCategory": "Beauty Product"
+  },
+  {
+     "name": "Baby Care Products for Boy", 
+     "parentCategory": "Babty Care Products"
+  }, 
+  {
+     "name": "Baby Care Products for Girl", 
+     "parentCategory": "Baby Care Products"
+  }, 
+  {
+    "name": "Car Care Product", 
+    "parentCategory": "Car Care"
+  }, {
+   "name": "Car Care Services", 
+    "parentCategory": "Car Care Services"
+  },
+  {
+    "name": "Furniture for Rent", 
+     "parentCategory": "Furniture Care Services"
+  },
+  { 
+    "name": "Refurnished Furniture for Sale", 
+    "parentCategory": "Furniture Care Services"
+  }, {
+    "name": "Furniture", 
+     "parentCategory" : null
+  }, 
+  {
+     "name": "Furniture Build at your Home Service", 
+     "parentCategory": "Furniture"
+  }, 
+  {
+    "name": "Furniture Repair Service" ,
+    "parentCategory": "Furniture"
+  }, 
+  {
+    "name" : "Rent Your Washing Machine", 
+    "parentCategory": "Home Care Services"
+  },
+  {
+     "name" : "Refurnished Washing Machine for Sale", 
+     "parentCategory": "Home Care Services"
+  },
+  {
+    "name": "Clean Your Kinchen Service", 
+    "parentCategory": "Home Care Services"
+  }, 
+  {
+    "name": "Clean Your Barthroom Service", 
+    "parentCategory": "Home Care Services"
+  }, 
+  { "name":"Baby Your Hale & Room Service", 
+    "parentCategory": "Home Care Services"
+  }, 
+  {
+    "name": "Clean Your Car Service", 
+    "parentCategory": "Car Care Services"
+  }, 
+  {
+    "name": "Repair Your Car Service", 
+    "parentCategory": "Car Care Services"
+  },
+   {
+     "name": "Parshal Delivery Service", 
+     "parentCategory": "Delivery Services"
+  }
+]

@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Nike Air Max Women",
+    "price": 3999,
+    "category": "Footware for Womens",
+    "image": "nike-air-max.jpg"
+  },
+  {
+    "name": "Puma Running Shoes Men",
+    "price": 2999,
+    "category": "Footware for Mens",
+    "image": "puma-men.jpg"
+  },
+  {
+    "name": "Kids School Shoes",
+    "price": 999,
+    "category": "Footware for Kids",
+    "image": "kids-shoes.jpg"
+  },
+
+  {
+    "name": "iPhone 18 Pro",
+    "price": 149999,
+    "category": "Electonics",
+    "image": "iphone.jpg"
+  },
+  {
+    "name": "Samsung 65 Inch Smart TV",
+    "price": 79999,
+    "category": "Electonics",
+    "image": "tv.jpg"
+  },
+
+  {
+    "name": "Bosch Drill Machine",
+    "price": 4500,
+    "category": "Hardware",
+    "image": "drill.jpg"
+  },
+
+  {
+    "name": "Classmate Notebook Pack",
+    "price": 250,
+    "category": "Stationary",
+    "image": "notebook.jpg"
+  },
+
+  {
+    "name": "Lakme Lipstick",
+    "price": 799,
+    "category": "Beauty Product for Womens",
+    "image": "lipstick.jpg"
+  },
+
+  {
+    "name": "Beardo Beard Oil",
+    "price": 499,
+    "category": "Beauty Producst for Mens",
+    "image": "beard-oil.jpg"
+  },
+
+  {
+    "name": "Johnson Baby Powder",
+    "price": 199,
+    "category": "Baby Care Products for Boy",
+    "image": "baby-powder.jpg"
+  },
+
+  {
+    "name": "3M Car Polish",
+    "price": 899,
+    "category": "Car Care Product",
+    "image": "car-polish.jpg"
+  },
+
+  {
+    "name": "Wooden Sofa Set",
+    "price": 25000,
+    "category": "Furniture",
+    "image": "sofa.jpg"
+  },
+
+  {
+    "name": "Furniture Repair Service",
+    "price": 499,
+    "category": "Furniture Repair Service",
+    "serviceType": true
+  },
+
+  {
+    "name": "Kitchen Deep Cleaning",
+    "price": 999,
+    "category": "Clean Your Kinchen Service",
+    "serviceType": true
+  },
+
+  {
+    "name": "Bathroom Cleaning",
+    "price": 799,
+    "category": "Clean Your Barthroom Service",
+    "serviceType": true
+  },
+
+  {
+    "name": "Parcel Delivery (Within City)",
+    "price": 150,
+    "category": "Parshal Delivery Service",
+    "serviceType": true
+  }
+]

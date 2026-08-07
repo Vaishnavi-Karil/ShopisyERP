@@ -1,0 +1,108 @@
+[{
+  "_id": {
+    "$oid": "6a5348ad1586046b0c98d7bd"
+  },
+  "name": "Footware",
+  "parentCategory": null,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a5349091586046b0c98d7bf"
+  },
+  "name": "Footware for womens",
+  "parentCategory": {
+    "$oid": "6a5348ad1586046b0c98d7bd"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a534af464b6b98408a9cbbf"
+  },
+  "name": "Footware for mens",
+  "parentCategory": {
+    "$oid": "6a5348ad1586046b0c98d7bd"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a534b0564b6b98408a9cbc1"
+  },
+  "name": "Footware for kits",
+  "parentCategory": {
+    "$oid": "6a5348ad1586046b0c98d7bd"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6a5393af0dd4a5d88f53be93"
+  },
+  "name": "Electronics",
+  "parentCategory": null
+},
+{
+  "_id": {
+    "$oid": "6a5393af0dd4a5d88f53be94"
+  },
+  "name": "Hardware",
+  "parentCategory": null
+},
+{
+  "_id": {
+    "$oid": "6a5393af0dd4a5d88f53be95"
+  },
+  "name": "Stationary",
+  "parentCategory": null
+},
+{
+  "_id": {
+    "$oid": "6a5393af0dd4a5d88f53be96"
+  },
+  "name": "Beauty Product",
+  "parentCategory": null
+},
+{
+  "_id": {
+    "$oid": "6a5393af0dd4a5d88f53be97"
+  },
+  "name": "Baby Care Products",
+  "parentCategory": null
+},
+{
+  "_id": {
+    "$oid": "6a5393af0dd4a5d88f53be98"
+  },
+  "name": "Car Care",
+  "parentCategory": null
+},
+{
+  "_id": {
+    "$oid": "6a5393af0dd4a5d88f53be99"
+  },
+  "name": "Car Care Services",
+  "parentCategory": null
+},
+{
+  "_id": {
+    "$oid": "6a5393af0dd4a5d88f53be9a"
+  },
+  "name": "Furniture",
+  "parentCategory": null
+},
+{
+  "_id": {
+    "$oid": "6a5393af0dd4a5d88f53be9b"
+  },
+  "name": "Home Care Services",
+  "parentCategory": null
+},
+{
+  "_id": {
+    "$oid": "6a5393af0dd4a5d88f53be9c"
+  },
+  "name": "Delivery Services",
+  "parentCategory": null
+}]

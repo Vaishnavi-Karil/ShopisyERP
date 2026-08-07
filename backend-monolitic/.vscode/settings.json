@@ -1,0 +1,13 @@
+{
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.enable": true,
+  "eslint.validate": ["javascript"],
+  "javascript.validate.enable": true,
+  "editor.occurrencesHighlight": "on",
+  "editor.selectionHighlight": true,
+  "editor.renderControlCharacters": true,
+  "editor.minimap.enabled": true
+}

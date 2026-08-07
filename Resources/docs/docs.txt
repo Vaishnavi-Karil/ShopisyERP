@@ -1,0 +1,597 @@
+Agar tum **production-ready eCommerce Backend** bana rahi ho (Amazon/Flipkart style), to routes ko CRUD aur business operations ke hisaab se design karo.
+
+---
+
+# 1. Auth Routes
+
+Base Route:
+
+```text
+/api/auth
+```
+
+| Method | Route                  | Purpose                      |
+| ------ | ---------------------- | ---------------------------- |
+| POST   | `/register`            | Register new user            |
+| POST   | `/login`               | Login                        |
+| POST   | `/logout`              | Logout                       |
+| POST   | `/refresh-token`       | Generate new access token    |
+| POST   | `/forgot-password`     | Send reset password link/OTP |
+| POST   | `/reset-password`      | Reset password               |
+| POST   | `/verify-email`        | Verify email                 |
+| POST   | `/resend-verification` | Resend verification email    |
+
+---
+
+# 2. User Routes
+
+Base Route:
+
+```text
+/api/users
+```
+
+| Method | Route              | Purpose                  |
+| ------ | ------------------ | ------------------------ |
+| GET    | `/profile`         | Logged-in user's profile |
+| PUT    | `/profile`         | Update profile           |
+| PUT    | `/change-password` | Change password          |
+| DELETE | `/profile`         | Delete own account       |
+| GET    | `/`                | Get all users (Admin)    |
+| GET    | `/:id`             | Get user by ID (Admin)   |
+| PUT    | `/:id`             | Update user (Admin)      |
+| DELETE | `/:id`             | Delete user (Admin)      |
+
+---
+
+# 3. Category Routes
+
+Base Route:
+
+```text
+/api/categories
+```
+
+> Main recommendation: route ko plural (`categories`) rakho. Ye REST convention hai.
+
+| Method | Route                | Purpose                  |
+| ------ | -------------------- | ------------------------ |
+| POST   | `/`                  | Create category          |
+| GET    | `/`                  | Get all categories       |
+| GET    | `/tree`              | Get nested category tree |
+| GET    | `/:id`               | Get category by ID       |
+| PUT    | `/:id`               | Update category          |
+| DELETE | `/:id`               | Delete category          |
+| GET    | `/:id/subcategories` | Get direct subcategories |
+
+---
+
+# Example Response
+
+### GET `/api/categories`
+
+```json
+[
+  {
+    "_id": "1",
+    "name": "Footwear",
+    "parentCategory": null
+  },
+  {
+    "_id": "2",
+    "name": "Footwear for Women",
+    "parentCategory": {
+      "_id": "1",
+      "name": "Footwear"
+    }
+  }
+]
+```
+
+---
+
+### GET `/api/categories/tree`
+
+```json
+[
+  {
+    "_id": "1",
+    "name": "Footwear",
+    "subCategories": [
+      {
+        "_id": "2",
+        "name": "Footwear for Women"
+      },
+      {
+        "_id": "3",
+        "name": "Footwear for Men"
+      },
+      {
+        "_id": "4",
+        "name": "Footwear for Kids"
+      }
+    ]
+  }
+]
+```
+
+---
+
+# 4. Product Routes
+
+```text
+/api/products
+```
+
+| Method | Route                   | Purpose              |
+| ------ | ----------------------- | -------------------- |
+| POST   | `/`                     | Create product       |
+| GET    | `/`                     | Get all products     |
+| GET    | `/:id`                  | Get product details  |
+| PUT    | `/:id`                  | Update product       |
+| DELETE | `/:id`                  | Delete product       |
+| GET    | `/category/:categoryId` | Products by category |
+| GET    | `/search`               | Search products      |
+| GET    | `/featured`             | Featured products    |
+
+---
+
+# Recommended Folder Structure
+
+```text
+src/
+│
+├── routes/
+│   ├── auth.routes.js
+│   ├── user.routes.js
+│   ├── category.routes.js
+│   ├── product.routes.js
+│   └── index.route.js
+│
+├── controllers/
+├── models/
+├── services/
+├── middlewares/
+├── utils/
+└── config/
+```
+
+---
+
+## Learning order
+
+Main suggest karunga ki tum features is order me implement karo:
+
+1. ✅ Auth (Register, Login)
+2. ✅ User Profile
+3. ✅ Categories (CRUD)
+4. ✅ Category Tree API
+5. ✅ Products (CRUD)
+6. ✅ Product Search & Filters
+7. ✅ Cart
+8. ✅ Wishlist
+9. ✅ Orders
+10. ✅ Payments
+11. ✅ Reviews & Ratings
+12. ✅ Admin Dashboard
+
+Is order me chalogi to har feature pichhle feature par naturally build hoga aur project production-ready architecture ki taraf badhega.
+
+
+
+सभी users के plain-text (original) passwords निम्नलिखित हैं, जिनका उपयोग आप login करने के लिए कर सकते हैं:                              
+                                                                                                                              
+   User Name                     │ Email                        │ Plain-text Password          │ Role / Business Type
+  ───────────────────────────────┼──────────────────────────────┼──────────────────────────────┼──────────────────────────────
+   Preeti                        │  preeti@gmail.com            │  preeti@123                  │ Customer
+   Vaishnavi                     │  vaishnavi@gmail.com         │  vaishnavi@123               │ Admin
+   Koushal                       │  koushal@gmail.com           │  koushal@123                 │ Vendor (Manufacturer)
+   Amit                          │  amit@gmail.com              │  amit@123                    │ Vendor (Wholesaler)
+   Rohan                         │  rohan@gmail.com             │  rohan@123                   │ Vendor (Retailer)
+   Siddharth                     │  siddharth@gmail.com         │  siddharth@123               │ Vendor (Service Provider)
+
+  │ [!NOTE]
+  │ Database में सुरक्षा के लिए ये सभी passwords  bcrypt  का उपयोग करके encrypted (hashed) रूप में स्टोर किए गए हैं, लेकिन login करते समय आप ऊपर दिए गए
+  │ original passwords ही डालेंगे।
+
+
+
+-------- Advance ( Market Place Feature bhi implement karna hai )-------------------------
+
+OPTION 1 :: IMPLEMENTATION ( IN MY CURRENT PROJECT)
+OPTION 2 :: IMPLEMENTE AFTER OPTION 1 IS COMPLETED ( NEXT IMPLEMENTATION AFTER OPTION 1 IS COMPLETED)
+
+Ye bahut important concept hai. **Ye hi Amazon, Flipkart, Walmart jaise bade marketplaces ka core architecture hai.**
+
+Abhi tum jo design bana rahi ho wo hai:
+
+```text
+Category
+    │
+    ▼
+Product
+    │
+    ▼
+sellerId
+```
+
+Yani har seller apna alag product banata hai.
+
+Example:
+
+```
+Nike Shoes
+sellerId = Nike Store
+
+Nike Shoes
+sellerId = Flipkart Retail
+
+Nike Shoes
+sellerId = Reliance Digital
+```
+
+Problem?
+
+Database me **same product 3 baar** store ho gaya.
+
+---
+
+# Amazon kya karta hai?
+
+Amazon product aur seller ko alag rakhta hai.
+
+## 1. Product Catalog
+
+Ye master product hota hai.
+
+```
+Product Catalog
+
+--------------------------------
+Product Name : iPhone 17 Pro
+
+Brand : Apple
+
+Category : Mobiles
+
+Description
+
+Specifications
+
+Weight
+
+Dimensions
+
+Images
+
+Color
+
+Storage Variants
+--------------------------------
+```
+
+Isme seller ka naam nahi hota.
+
+Ek hi record hota hai.
+
+---
+
+## 2. Seller Listing
+
+Har seller apni listing banata hai.
+
+```
+Seller Listing
+
+Seller : Amazon Retail
+
+Product : iPhone 17 Pro
+
+Price : ₹82,000
+
+Stock : 25
+
+Delivery : 1 Day
+
+Status : Approved
+```
+
+Dusra seller
+
+```
+Seller : Reliance Digital
+
+Product : iPhone 17 Pro
+
+Price : ₹81,700
+
+Stock : 18
+
+Delivery : 2 Days
+```
+
+Teesra seller
+
+```
+Seller : Croma
+
+Product : iPhone 17 Pro
+
+Price : ₹82,500
+
+Stock : 11
+```
+
+Notice karo
+
+**Product ek hi hai.**
+
+Seller alag-alag hain.
+
+---
+
+# Database Design
+
+```
+Category
+      │
+      ▼
+Product Catalog
+      │
+      ▼
+Seller Listing
+      │
+      ▼
+Order
+```
+
+---
+
+## Product Catalog Schema
+
+```javascript
+{
+   name,
+
+   brand,
+
+   description,
+
+   categoryId,
+
+   specifications,
+
+   images
+}
+```
+
+Isme
+
+❌ sellerId nahi hota.
+
+---
+
+## Seller Listing Schema
+
+```javascript
+{
+   sellerId,
+
+   productId,
+
+   price,
+
+   stock,
+
+   discount,
+
+   shippingCharge,
+
+   deliveryDays,
+
+   status
+}
+```
+
+Yaha
+
+✔ sellerId hota hai.
+
+✔ productId hota hai.
+
+---
+
+# Example
+
+Product Collection
+
+```
+_id : 100
+
+iPhone 17
+```
+
+Seller Listing Collection
+
+```
+_id : 1
+
+sellerId : Amazon
+
+productId : 100
+
+price : 82000
+```
+
+```
+_id : 2
+
+sellerId : Reliance
+
+productId : 100
+
+price : 81800
+```
+
+```
+_id : 3
+
+sellerId : Croma
+
+productId : 100
+
+price : 82100
+```
+
+---
+
+# Customer kya dekhta hai?
+
+Customer search karta hai
+
+```
+iPhone 17
+```
+
+System
+
+↓
+
+Product Catalog
+
+↓
+
+iPhone 17
+
+↓
+
+Seller Listings
+
+↓
+
+```
+Amazon ₹82,000
+
+Reliance ₹81,800
+
+Croma ₹82,100
+```
+
+Customer seller choose karta hai.
+
+---
+
+# Agar seller stock khatam kare
+
+Sirf uski listing update hoti hai.
+
+```
+Reliance
+
+Stock = 0
+```
+
+Product delete nahi hota.
+
+Dusre sellers abhi bhi bech sakte hain.
+
+---
+
+# Agar Amazon Retail product remove kare
+
+```
+Seller Listing Delete
+```
+
+Sirf Amazon wali listing remove hogi.
+
+Product Catalog nahi.
+
+---
+
+# Tumhare current project me kya karna chahiye?
+
+### Option 1 (Current)
+
+```
+Category
+
+↓
+
+Product
+
+↓
+
+sellerId
+```
+
+✅ Simple
+
+✅ Learning ke liye best
+
+✅ 95% MERN interviews ke liye enough
+
+---
+
+### Option 2 (Marketplace)
+
+```
+Category
+
+↓
+
+Product Catalog
+
+↓
+
+Seller Listing
+
+↓
+
+Inventory
+
+↓
+
+Order
+```
+
+✅ Amazon
+
+✅ Flipkart
+
+✅ Walmart
+
+❌ Thoda complex
+
+---
+
+# Meri recommendation
+
+Tum abhi **MongoDB, Mongoose, Authentication, Authorization, Aggregation, Production APIs** seekh rahi ho.
+
+Is stage par **Catalog + Seller Listing architecture mat implement karo**.
+
+Pehle ye complete karo:
+
+```
+User
+Category
+Product
+Cart
+Order
+Wishlist
+Review
+Payment
+Address
+```
+
+Aur `Product` me `sellerId` rakho.
+
+Jab ye project complete ho jaye aur tum advanced marketplace version banana chaho, tab hum `Product` ko do collections me tod denge:
+
+* **Product Catalog**
+* **Seller Listing**
+
+Ye migration bhi main step-by-step sikhaunga.
+
+**Meri advice:** Tumhare current learning stage ke liye **single `Product` collection + `sellerId`** bilkul sahi aur production-quality design hai. Jab marketplace scaling ka topic aayega, tab Catalog + Seller Listing architecture par move karna natural next step hoga.

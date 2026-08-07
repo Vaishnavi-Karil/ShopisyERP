@@ -1,0 +1,21 @@
+[
+    {
+        "name" : " Preeti", 
+        "email": "preeti@gmail.com",
+        "password": "preeti@123", 
+        "role": "customer"
+    },
+     {
+         "name" :  "Vaishnavi", 
+         "email": "vaishnavi@gmail.com", 
+         "password": "vaishnavi@123",
+          "role": "customer"
+     }, 
+     {
+        "name" :"Koushal",
+        "email": "koushal@gmail.com",
+        "password": "koushal@123",
+         "role": "customer"
+     }
+]
+
